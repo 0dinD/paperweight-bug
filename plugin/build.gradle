@@ -1,0 +1,18 @@
+plugins {
+    id "java-library"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+repositories {
+    maven { url "https://papermc.io/repo/repository/maven-public/" }
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT"
+    runtimeOnly project(path: ":nms-submodule", configuration: "reobf")
+}
+
+group = "org.example"
+version = "1.0.0-SNAPSHOT"
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
